@@ -13,13 +13,10 @@ public class BbcHomePage {
     public BbcHomePage(WebDriver driver) {
         this.driver = driver;
     }
-
     public void goToHomePsge(){
         driver.navigate().to(homePageURL);
     }
-
     public void clickSignIn(){
         driver.findElement(signInLinkId).click();
     }
 }
-

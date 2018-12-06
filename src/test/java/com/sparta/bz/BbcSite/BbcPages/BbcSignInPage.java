@@ -14,30 +14,28 @@ public class BbcSignInPage {
     private By passwordFieldId = By.id("password-input");
     private By submitButtonId = By.id("submit-button");
     private By incorrectPasswordErrorId = By.id("form-message-password");
+    private String errorText = "Sorry, that password isn't valid. Please include a letter.";
 
     public BbcSignInPage(WebDriver driver) {
         this.driver = driver;
     }
-
     public void goToSignInPage(){
         driver.navigate().to(signInPageURL);
     }
-
     public void inputUserName(String name){
         driver.findElement(usernameFieldId).sendKeys(name);
     }
-
     public void inputPassword(String password){
         driver.findElement(passwordFieldId).sendKeys(password);
     }
-
     public void clickSubmitButton(){
         driver.findElement(submitButtonId).click();
     }
-
     public String getPasswordErrorText(){
         return driver.findElement(incorrectPasswordErrorId).getText();
     }
+    public String getSignInPageURL() { return signInPageURL; }
+    public String getErrorText() { return errorText; }
 
     //page assertion
 
